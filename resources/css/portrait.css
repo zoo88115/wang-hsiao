@@ -1,0 +1,138 @@
+@media(orientation: portrait){
+	/*css 變數*/
+		:root{
+			--css-gallery-size:25vw;
+			--css-theme-color:#F00;
+			--css-header-color:#FFF;
+			--css-footer-color:#FFF;
+		}
+		body{
+			font-size: 20px;
+		}
+		.slider{
+			height:100vh;
+			width: 100%;
+			padding: 0 !important;
+			margin:0 !important;
+		}
+		.invited-area{
+			position:absolute;
+			width:100vw;
+			height:100vh;
+			top: 0;
+		}
+		.wrapper{
+			width: 100%;
+			height: 100vh;
+			background: url('../img/wrapper.png') no-repeat fixed;
+			background-size: cover;
+   			background-position: center;
+		}
+		.landscape{
+			width:inherit;
+			height:inherit;
+			background: no-repeat fixed;
+			background-size: cover;
+			background-position: center;
+		}
+		#invited_text {
+		    font-family: 'Pacifico', cursive;
+		    font-size: 36px;
+		    margin-top: 70px;
+		    text-shadow: 4px 2px 2px #333;
+		    opacity: 0.95;
+		}
+		.light-border{
+			position: relative;
+		    color: #FFF;
+		    border-top: medium double #fff;
+		    border-bottom: medium double #fff;
+		}
+		.banner-text::before {
+			font-family: "Font Awesome 5 Free";
+		    display: block;
+		    position: absolute;
+		    font-size: 26px;
+		    color: #F00;
+		    content: "\f004";
+		    width:100%;
+		    text-align: center;
+		    top: 0;
+		    margin-top: -20px;
+		    margin-left: -10px;
+		    font-weight: 900;
+		    text-shadow: 1px 2px 5px #000;
+		}
+		.banner-text::after {
+			font-family: "Font Awesome 5 Free";
+		    display: block;
+		    position: absolute;
+		    top:0;
+		    font-size: 26px;
+		    color: #FFF;
+		    content: "\f004";
+		    width:100%;
+		    text-align: center;
+		    margin-top: -20px;
+		    margin-left:10px;
+		    font-weight: 900;
+		    text-shadow: 1px 2px 5px #000;
+		}
+		#banner_date {
+		    font-family: 'Oswald', sans-serif;
+		    letter-spacing: 3px;
+		    font-size: 14px;
+		    text-shadow: #000 2px 2px 2px;
+		}
+		.logo{
+			width:4rem;
+			height:4rem;
+			background-color: red;
+    		border-radius: 50%;
+		}
+		.menu > .d-flex.justify-content-center> .p-2.align-self-center{
+			font-size: 1rem;
+			color:#3E3E3E;
+		}
+		.gallery-size{
+			width:var(--css-gallery-size);
+			height:var(--css-gallery-size);
+			background-position: center;
+    		background-size: cover;
+    		position: relative;
+			overflow: hidden;
+		}
+		header{
+			height: 0 !important;
+		}
+		#portrait-menu{
+			display: block;
+			position: fixed;
+			top:5px;
+			right: 5px;
+			color:white;
+		}
+		#navi{
+			display: none;
+			background-color: var(--css-header-color) !important;
+			height:15vh;
+		}
+		.nav-fixed{
+			z-index: 10;          
+			position: fixed;      
+			top: 0;
+			left: 0;
+			margin-top: 0;
+			min-width: 100%;
+			opacity: 0.94;
+			height:15vh;
+			background-color: var(--css-header-color) !important;
+			transition: opacity .5s ease-out;
+		}
+		.footer{
+			background-color: var(--css-footer-color) !important;
+		}
+	.editing{
+		display: none;
+	}
+}
