@@ -27,6 +27,9 @@
     <link type="text/css" rel="stylesheet" href="resources/css/landscape.css" />
 
 	<script type="text/javascript">
+		$(window).on('load', function(){
+            $('#loader').hide(0);
+        });
 		//倒數計時
 		var countDownDate = new Date("March 29, 2020 12:00:00").getTime();
 		// Update the count down every 1 second
@@ -59,12 +62,12 @@
 
 		$(document).ready(function(){
 			/*背景圖片滑動*/
-			$('.wrapper').parallax("35%", 0.9);
-			$('.landscape1').parallax("30%", 0.05);
-			$('.landscape2').parallax("30%", 0.05);
-			$('.landscape3').parallax("30%", 0.05);
-			$('.landscape4').parallax("30%", 0.05);
-			$('.landscape5').parallax("30%", 0.05);
+			// $('.wrapper').parallax("35%", 0.9);
+			// $('.landscape1').parallax("30%", 0.05);
+			// $('.landscape2').parallax("30%", 0.05);
+			// $('.landscape3').parallax("30%", 0.05);
+			// $('.landscape4').parallax("30%", 0.05);
+			// $('.landscape5').parallax("30%", 0.05);
 			//loadWeddingPhotos();
 			loadWeddingPhotosFixed();
 			//$("#lightgallery").lightGallery();
@@ -99,7 +102,13 @@
 		}
 	</script>
 </head>
-<body>
+<body style="width:100vw;overflow-x: hidden;">
+	<div id="loader" style="position: fixed;width: 100%;height: 100vh;z-index: 999999;background-color: white">
+		<!--Loading页面-->
+		<div class="d-flex flex-column justify-content-center" style="width:100%;height:100%"> 
+			<div class="p-2 align-self-center">loading</div>
+		</div>
+    </div>
 	<section id="top-img">
 		<div id="top-scroll-img" class="slider">
 			<div class="wrapper"></div>

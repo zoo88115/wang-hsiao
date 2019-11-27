@@ -41,7 +41,7 @@
 		    margin-top: 70px;
 		    text-shadow: 4px 2px 2px #333;
 		    opacity: 0.95;
-		    font-weight: 800;
+		    font-weight: 800 !important;
 		}
 		.light-border{
 			position: relative;
