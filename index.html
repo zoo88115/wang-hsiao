@@ -16,10 +16,10 @@
 	<script type="text/javascript" src="resources/js/jquery.localscroll-1.2.7-min.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.scrollTo-1.4.2-min.js"></script>
 	<!--lightgallery 相簿-->
-	<link type="text/css" rel="stylesheet" href="resources/css/lightGallery.css" />
+	<!-- <link type="text/css" rel="stylesheet" href="resources/css/lightGallery.css" />
 	<script type="text/javascript" src="resources/js/lightgallery.js"></script>
 	<script src="resources/js/lg-thumbnail.min.js"></script>
-    <script src="resources/js/lg-fullscreen.min.js"></script>
+    <script src="resources/js/lg-fullscreen.min.js"></script> -->
     <!--fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -27,9 +27,39 @@
     <link type="text/css" rel="stylesheet" href="resources/css/landscape.css" />
 
 	<script type="text/javascript">
+		//倒數計時
+		var countDownDate = new Date("March 29, 2020 12:00:00").getTime();
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+		  // Get today's date and time
+		  var now = new Date().getTime();
+		    
+		  // Find the distance between now and the count down date
+		  var distance = countDownDate - now;
+		    
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		    
+		  // Output the result in an element with id="demo"
+		  $("#day").html(days);
+		  $("#hour").html(hours);
+		  $("#min").html(minutes);
+		  $("#sec").html(seconds);
+		    
+		  // If the count down is over, write some text 
+		  if (distance < 0) {
+		    clearInterval(x);
+		    $(".countdown-area").html("就是現在了！！");
+		  }
+		}, 1000);
+
 		$(document).ready(function(){
 			/*背景圖片滑動*/
-			$('.wrapper').parallax("30%", 0.1);
+			$('.wrapper').parallax("35%", 0.9);
 			$('.landscape1').parallax("30%", 0.05);
 			$('.landscape2').parallax("30%", 0.05);
 			$('.landscape3').parallax("30%", 0.05);
@@ -107,7 +137,7 @@
 	<!--婚紗照-->
 	<div class="container-fluid menu-1" style="width:100%;background-color: #eee">
 		<div class="d-flex flex-column" style="padding:2rem">
-			<div style="text-align: center;font-size: 2rem">WEDDING<i class="far fa-heart" style="color:pink;margin:0 10px"></i>PHOTOS</div>
+			<div style="text-align: center;font-size: 1.8rem">WEDDING<i class="far fa-heart" style="color:pink;margin:0 10px"></i>PHOTOS</div>
 			<div style="text-align: center">: : : : : 與您分享我們幸福的婚紗照 : : : : :</div>
 		</div>
 		<div class="row" id="lightgallery">
@@ -115,8 +145,14 @@
 		</div>
 	</div>
 	<!--風景1-->
-	<div class="container-fluid" style="width:100%;height: 100vh;padding:0">
-		<div class="landscape landscape1" style="background-image: url('resources/img/view1.png') "></div>
+	<div class="container-fluid" style="width:100%;height: 50vh;padding:0">
+		<div class="landscape landscape1" style="background-image: url('resources/img/view1.png') ">
+			<div class="d-flex flex-column justify-content-center" style="position: absolute;z-index: 1;width:100%;height:inherit;">
+				<div class="p-2 align-self-center w2">WHERE & WHEN</div>
+				<div class="p-2 align-self-center host-invite-text">誠摯邀請您來分享這幸福的時刻</div>
+				<div class="p-2 align-self-center host-invite">王唯至 & 蕭妤竹 敬邀</div>
+			</div>
+		</div>
 	</div>
 	
 	<!--影音-->
@@ -128,33 +164,56 @@
 		<div class="landscape landscape2" style="background-image: url('resources/image/view1.png') "></div>
 	</div>-->
 	<!--婚宴資訊-->
-	<div class="container-fluid menu-3" style="width:100%;height: 100vh;background-color: #eee">
+	<div class="container-fluid menu-3" style="width:100%;padding:1rem .5rem;background-color: #eee">
 		<div class="row">
 			<!--婚宴資訊-->
 			<div class="col-xl-6">
 				<div class="p-2 align-self-center" style="width: fit-content;margin:auto auto">
 					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/03/29</div>
-					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fa-building"></i>地點：福容飯店</div>
+					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：福容飯店</div>
 					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: red;margin-right:10px" class="fas fa-map-marker-alt"></i>地址：花蓮縣花蓮市民生路51號</div>
 				</div>
 			</div>
 			<!--map-->
 			<div class="col-xl-6">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.0066325184766!2d121.63103531407737!3d23.995542885286067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3466208136dfe79f%3A0x119d5ff83ebff27e!2z56aP5a655aSn6aOv5bqXIOiKseiTrg!5e0!3m2!1szh-TW!2stw!4v1573097551864!5m2!1szh-TW!2stw" width="100%" height="450px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.0066325184766!2d121.63103531407737!3d23.995542885286067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3466208136dfe79f%3A0x119d5ff83ebff27e!2z56aP5a655aSn6aOv5bqXIOiKseiTrg!5e0!3m2!1szh-TW!2stw!4v1573097551864!5m2!1szh-TW!2stw" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 			</div>
-		</div>
-		<div class="row">
-			
 		</div>
 	</div>
 	<!--風景3-->
-	<div class="container-fluid" style="width:100%;height: 100vh;padding:0">
-		<div class="landscape landscape3" style="background-image: url('resources/img/view1.png') "></div>
+	<div class="container-fluid" style="width:100%;height: 50vh;padding:0">
+		<div class="landscape landscape3" style="background-image: url('resources/img/view1.png') ">
+			<div class="d-flex flex-column justify-content-center" style="position: absolute;z-index: 1;width:100%;height:inherit;">
+				<div class="p-2 align-self-center w2">Don't Miss It!</div>
+				<div class="p-2 align-self-center countdown-text">: : : : : : 讓我們一起來倒數這值得紀念的一刻 : : : : : :</div>
+				<div class="p-2 countdown-area">
+					<div class="d-flex justify-content-center">
+						<div class="countdown-circle d-flex flex-column justify-content-center"><div id="day">999</div></div>
+						<div class="countdown-circle d-flex flex-column justify-content-center"><div id="hour">24</div></div>
+						<div class="countdown-circle d-flex flex-column justify-content-center"><div id="min">60</div></div>
+						<div class="countdown-circle d-flex flex-column justify-content-center last"><div id="sec">60</div></div>
+					</div>
+				</div>
+				<div class="p-2 countdown-area-2">
+					<div class="d-flex justify-content-center">
+						<div class="p-2 countdown-day-circle">DAY</div>
+						<div class="p-2 countdown-day-circle">HOUR</div>
+						<div class="p-2 countdown-day-circle">MIN</div>
+						<div class="p-2 countdown-day-circle last">SEC</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!--出席回覆-->
 	<div id="google_form" class="container-fluid menu-4" style="width:100%;;background-color: #eee">
 		<!-- <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="this.onload=function(){window.location='index.html'}"></iframe> -->
-		111111
+		<div class="d-flex flex-column justify-content-center">
+			<div class="p-2 rsvp" style="text-align: center">RSVP</div>
+			<div class="p-2 rsvp-info" style="text-align: center">我們懷著喜悅與感謝的心，期盼您的光臨。</div>
+			<div class="p-2 rsvp-info" style="text-align: center">為方便安排您的座位</div>
+			<div class="p-2 rsvp-info" style="text-align: center">請於1月30日前回覆出席資訊，謝謝！</div>
+		</div>
 	</div>
 	<!--風景4-->
 	<div class="container-fluid" style="width:100%;height: 100vh;padding:0">

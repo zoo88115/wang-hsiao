@@ -7,7 +7,7 @@
 			--css-footer-color:#FFF;
 		}
 		body{
-			font-size: 20px;
+			font-size: 16px;
 		}
 		.slider{
 			height:100vh;
@@ -133,6 +133,74 @@
 			background-color: var(--css-footer-color) !important;
 		}
 	.editing{
-		display: none;
+		display: none !important;
+	}
+	.w2{
+		font-family: 'Oswald', cursive;
+		color: white;
+		font-size: 2rem;
+		text-shadow: #000 3px 3px;
+	}
+	.host-invite-text{
+		color:white;
+		font-size: 1rem;
+		text-shadow: #000 1px 1px;
+	}
+	.host-invite{
+		color:white;
+		font-size: 1rem;
+		text-shadow: #000 1px 1px;
+	}
+	.countdown-circle{
+		width:4rem;
+		height:4rem;
+		background-color: #f0394d;
+		border-radius: 50%;
+		margin-right:1rem;
+	}
+	.countdown-circle > div{
+		text-align: center;
+	    font-size: 1.6rem;
+	    font-weight: 600;
+	    font-family: 'Pacifico';
+	    height: 4rem;
+	    line-height: 3.7rem;
+	    color:white;
+	}
+	.countdown-circle.last{
+		margin-right:0 !important;
+	}
+	.countdown-day-circle{
+		font-family: 'Oswald', cursive;
+		color: white;
+		font-size: 1.3rem;
+		text-shadow: #000 2px 2px;
+		width:4rem;
+		margin-right:1rem;
+		text-align: center;
+		padding:0 !important;
+	}
+	.countdown-day-circle.last{
+		margin-right:0 !important;
+	}
+	.countdown-text{
+		font-size:1rem;
+		color:white;
+		text-shadow: #000 1px 1px;
+	}
+	.countdown-area{
+		margin-top:1rem;
+	}
+	.countdown-area-2{
+		margin-top:0;
+		padding:0 !important;
+	}
+	.rsvp{
+		font-family: 'Pacifico', cursive;
+	    color: black;
+	    font-size: 2rem;
+	}
+	.rsvp-info{
+		font-size:.8rem;
 	}
 }
