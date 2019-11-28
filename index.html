@@ -96,6 +96,9 @@
 			    //ary[0] = 'id=U001'，ary[1] = 'name=GQSM'
 			    if(ary.length > 0 && ary[0].split('=').length > 0 && ary[0].split('=')[0] == 'replied' && ary[0].split('=')[1] == '1'){
 			    	$('#google_form').hide();
+			    	$('#thank_you').show();
+			    	$('#rsvp_area').addClass('hide-important');
+			    	$('html,body').animate({scrollTop:$('#rsvp_area').offset().top}, 500);
 			    	alert('感謝您抽空回覆');
 			    }
 			}
@@ -121,6 +124,34 @@
 
 		function scrollToTopMenuIndex(index){
 			$('html,body').animate({scrollTop:$('.menu-' + index).offset().top}, 500);
+		}
+
+		//判斷是否需要兒童座椅
+		function haveChild(){
+			if($("#entry_356945165").val() == '需要'){
+				$("#child-amount").show();
+			}else{
+				$("#child-amount").hide();
+				$('#entry_339850552')[0].selectedIndex = 1;  //第二個選項選取
+				$('#entry_339850552').trigger('change');
+			}
+		}
+
+		//判斷是否出席
+		function isAttend(){
+			var opt = $('#entry_1791665139').val();
+			if(opt == '是，我需要寄送紙本喜帖'){
+				$("#card_to_address").show();
+				$("#card_to_email").show();
+			}else if(opt == '是，請給我電子喜帖就好'){
+				$("#card_to_address").show();
+				$("#card_to_email").show();
+			}else{
+				$("#card_to_address").hide();
+				$("#card_to_email").hide();
+				$("#entry_861079328").val('');
+				$("#entry_425653736").val('');
+			}
 		}
 	</script>
 </head>
@@ -229,31 +260,34 @@
 						<div class="p-2 countdown-day-circle last">SEC</div>
 					</div>
 				</div>
-				<div class="d-flex flex-column justify-content-center" style="margin-top:2rem">
+				<div id="rsvp_area" class="d-flex flex-column justify-content-center" style="margin-top:2rem">
 					<div class="p-2 rsvp">RSVP</div>
+					
+					<div class="p-2 rsvp-info">誠摯的邀請您來參與及見證我們最重要的時刻</div>
 					<div class="p-2 rsvp-info">我們懷著喜悅與感謝的心，期盼您的光臨。</div>
-					<div class="p-2 rsvp-info">為方便安排您的座位</div>
-					<div class="p-2 rsvp-info">請於1月30日前回覆出席資訊，謝謝！</div>
+					<div class="p-2 rsvp-info">希望您們能協助完成下列表單</div>
+					<div class="p-2 rsvp-info">無論是否出席我們都能感受到您們的祝福！</div>
+					
+				</div>
+				<div id="thank_you" class="container-fluid" style="padding:2rem;text-align: center;display: none">
+					<div class="p-2 thank-you-eng">Thanks for your reply</div>
+					<div class="p-2 thank-you-tw">感謝你的回覆</div>
 				</div>
 			</div>
 	</div>
 	<!--出席回覆-->
-	<div id="google_form" class="container-fluid menu-4" style="width:100%;;background-color: #eee">
+	<div id="google_form" class="container-fluid menu-4" style="width:100%;;background-color: #eee;padding:2rem 1rem">
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="this.onload=function(){window.location='index.html?replied=1'}"></iframe>
 		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfj7fP6hDfjen1X9ByzEdfK71uZ_YeQuM9aj_Nd8VYk-_wRiw/formResponse" method="POST" id="ss-form" target="hidden_iframe" autocomplete="on"><ol role="list" class="ss-question-list" style="padding-left: 0;">
 			<!--姓名-->
+			姓名
 			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-			    	<span class="input-group-text">姓名</span>
-			  	</div>
 			  	<input type="text" name="entry.1263821132" value="" class="form-control" id="entry_1263821132" dir="auto" aria-label="您的姓名 請留下真實中文姓名，不要留小名喔！謝謝 " aria-required="true" required="" title="" placeholder="請留下真實中文姓名，不要留小名喔！">
 			</div>
 
 			<!--與新人的關係-->
+			與新人的關係
 			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-			    	<label class="input-group-text" for="entry_2106041201">與新人的關係</label>
-			  	</div>
 			  	<select class="custom-select" name="entry.2106041201" id="entry_2106041201" aria-label="與新人的關係  " aria-required="true" required="">
 					<option value="&#26032;&#37070;&#35242;&#25114;">新郎親戚</option>
 					<option value="&#26032;&#37070;&#21516;&#23416;">新郎同學</option>
@@ -268,11 +302,9 @@
 			</div>
 
 			<!--是否出席？-->
+			您是否會出席婚禮？
 			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-			    	<label class="input-group-text" for="entry_1791665139">您是否會出席婚禮？</label>
-			  	</div>
-			  	<select class="custom-select" name="entry.1791665139" id="entry_1791665139" aria-label="您是否會出席婚禮？  " aria-required="true" required="">
+			  	<select class="custom-select" name="entry.1791665139" id="entry_1791665139" aria-label="您是否會出席婚禮？  " aria-required="true" required="" onchange="isAttend()">
 					<option value="&#26159;&#65292;&#25105;&#38656;&#35201;&#23492;&#36865;&#32025;&#26412;&#21916;&#24086;">是，我需要寄送紙本喜帖</option>
 					<option value="&#26159;&#65292;&#35531;&#32102;&#25105;&#38651;&#23376;&#21916;&#24086;&#23601;&#22909;">是，請給我電子喜帖就好</option>
 					<option value="&#21542;&#65292;&#31069;&#20320;&#20497;&#24184;&#31119;&#32654;&#28415;&#65281;">否，祝你們幸福美滿！</option>
@@ -280,39 +312,51 @@
 			</div>
 
 			<!--當天參加人數(含本人)-->
+			當天參加人數(含本人)
+			<!-- 如有攜伴請告知喔！避免親友沒有位置享用美食及觀禮 -->
 			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-			    	<span class="input-group-text">當天參加人數(含本人)</span>
-			  	</div>
-			  	<input type="text" name="entry.1711431407" value="" class="form-control" id="entry_1711431407" dir="auto" aria-label="當天參加人數(含本人) 如有攜伴請告知喔！避免親友沒有位置享用美食及觀禮 " aria-required="true" required="" title="">
+			  	<select class="custom-select" name="entry.1711431407" id="entry_1711431407" aria-label="當天參加人數(含本人) 如有攜伴請告知喔！避免親友沒有位置享用美食及觀禮 " aria-required="true" required="">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
 			</div>
-			如有攜伴請告知喔！避免親友沒有位置享用美食及觀禮
 
 			<!--共幾位吃素-->
+			共幾位吃素
 			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-			    	<span class="input-group-text">共幾位吃素</span>
-			  	</div>
-			  	<input type="text" name="entry.1295603944" value="" class="form-control" id="entry_1295603944" dir="auto" aria-label="共幾位吃素  " aria-required="true" required="" title="">
+			  	<select class="custom-select" name="entry.1295603944" id="entry_1295603944" aria-label="共幾位吃素  " aria-required="true" required="">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
 			</div>
 
 			<!--是否需要兒童座椅 -->
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-			    	<label class="input-group-text" for="entry_356945165">是否需要兒童座椅</label>
-			  	</div>
-			  	<select class="custom-select" name="entry.356945165" id="entry_356945165" aria-label="是否需要兒童座椅 有需要的父母親請記得填寫喔！ " aria-required="true" required="">
+			是否需要兒童座椅
+			<div class="input-group mb-3">	
+			  	<select class="custom-select" name="entry.356945165" id="entry_356945165" aria-label="是否需要兒童座椅 有需要的父母親請記得填寫喔！ " aria-required="true" required="" onchange="haveChild()">
 					<option value="&#19981;&#38656;&#35201;">不需要</option>
 					<option value="&#38656;&#35201;">需要</option>
 				</select>
 			</div>
 
 			<!-- optional 兒童座椅數量-->
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-			    	<span class="input-group-text">兒童座椅數量</span>
-			  	</div>
-			  	<input type="text" name="entry.339850552" value="" class="form-control" id="entry_339850552" dir="auto" aria-label="兒童座椅數量  " title="">
+			<div id="child-amount" style="display: none">
+			兒童座椅數量
+				<div class="input-group mb-3">
+				  	<select class="custom-select" name="entry.339850552" id="entry_339850552" aria-label="兒童座椅數量  ">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+					</select>
+				</div>
 			</div>
 
 			<!--聯絡電話-->
@@ -322,15 +366,19 @@
 			</div>
 			
 			<!-- 喜帖寄送地址 -->
-			喜帖寄送地址
-			<div class="input-group mb-3">
-			  <input type="text" name="entry.861079328" value=""  class="form-control" id="entry_861079328" dir="auto" aria-label="喜帖寄送地址 請填寫詳細地址及郵遞區號，確保喜帖可以到您的手中喔 " aria-required="true" required="" title="" placeholder="喜帖寄送地址...">
+			<div id="card_to_address">
+				喜帖寄送地址
+				<div class="input-group mb-3">
+				  <input type="text" name="entry.861079328" value=""  class="form-control" id="entry_861079328" dir="auto" aria-label="喜帖寄送地址 請填寫詳細地址及郵遞區號，確保喜帖可以到您的手中喔 " aria-required="true" required="" title="" placeholder="喜帖寄送地址...">
+				</div>
 			</div>
 
 			<!-- Email -->
-			有需要電子喜帖的朋友，請務必填寫
-			<div class="input-group mb-3">
-			  <input type="text" name="entry.425653736" value="" class="form-control" id="entry_425653736" dir="auto" aria-label="EMAIL 有需要電子喜帖的朋友，請務必填寫 " title="" placeholder="email...">
+			<div id="card_to_email">
+				有需要電子喜帖的朋友，請務必填寫
+				<div class="input-group mb-3">
+				  <input type="text" name="entry.425653736" value="" class="form-control" id="entry_425653736" dir="auto" aria-label="EMAIL 有需要電子喜帖的朋友，請務必填寫 " title="" placeholder="email...">
+				</div>
 			</div>
 
 			<!-- 有什麼祝福的話想要對我們說的嗎 -->
