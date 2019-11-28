@@ -24,7 +24,7 @@
 		.wrapper{
 			width: 100%;
 			height: 100vh;
-			background: url('../img/wrapper.png') no-repeat fixed;
+			background-image: url(../img/wrapper.png);
 			background-size: cover;
    			background-position: center;
 		}
@@ -38,7 +38,6 @@
 		#invited_text {
 		    font-family: 'Pacifico', cursive;
 		    font-size: 36px;
-		    margin-top: 70px;
 		    text-shadow: 4px 2px 2px #333;
 		    opacity: 0.95;
 		    font-weight: 800 !important;
@@ -198,10 +197,14 @@
 	}
 	.rsvp{
 		font-family: 'Pacifico', cursive;
-	    color: black;
+	    color: white;
 	    font-size: 2rem;
+	    text-shadow: #000 2px 2px 3px;
+	    text-align: center;
 	}
 	.rsvp-info{
 		font-size:.8rem;
+		color:white;
+		text-align: center;
 	}
 }

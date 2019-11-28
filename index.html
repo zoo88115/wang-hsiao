@@ -1,24 +1,20 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
 	<!--  XX-XX 為class,  XX_XX 為id -->
 	<title>wedding</title>
 	<link rel="icon" href="resources/img/rings.ico" type="image/x-icon"/>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" />
 	<!--<link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">-->
 	<!--<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">-->
 	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
 	<!--視差滾動-->
-	<script type="text/javascript" src="resources/js/jquery.parallax-1.1.3.js"></script>
+	<!-- <script type="text/javascript" src="resources/js/jquery.parallax-1.1.3.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.localscroll-1.2.7-min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.scrollTo-1.4.2-min.js"></script> -->
 	<!--lightgallery 相簿-->
 	<!-- <link type="text/css" rel="stylesheet" href="resources/css/lightGallery.css" />
 	<script type="text/javascript" src="resources/js/lightgallery.js"></script>
@@ -77,6 +73,7 @@
 			// $('.landscape4').parallax("30%", 0.05);
 			// $('.landscape5').parallax("30%", 0.05);
 			//loadWeddingPhotos();
+			isReplied();
 			loadWeddingPhotosFixed();
 			//$("#lightgallery").lightGallery();
 
@@ -87,7 +84,24 @@
 			      $('#navi').removeClass('nav-fixed'); /* 移除選單固定效果 */
 			    }
 			});
-		})
+		});
+
+		function isReplied(){
+			var url = location.href;
+			if(url.indexOf('?')!=-1){
+			    var id = "";
+			    //在此直接將各自的參數資料切割放進ary中
+			    var ary = url.split('?')[1].split('&');
+			    //此時ary的內容為：
+			    //ary[0] = 'id=U001'，ary[1] = 'name=GQSM'
+			    if(ary.length > 0 && ary[0].split('=').length > 0 && ary[0].split('=')[0] == 'replied' && ary[0].split('=')[1] == '1'){
+			    	$('#google_form').hide();
+			    	alert('感謝您抽空回覆');
+			    }
+			}
+		}
+
+
 
 		function loadWeddingPhotosFixed(){
 			var str="";
@@ -110,7 +124,7 @@
 		}
 	</script>
 </head>
-<body style="width:100vw;overflow-x: hidden;">
+<body>
 	<div id="loader" style="position: fixed;width: 100%;height: 100vh;z-index: 999999;background-color: white">
 		<!--Loading页面-->
 		<div class="d-flex flex-column justify-content-center" style="width:100%;height:100%"> 
@@ -118,8 +132,7 @@
 		</div>
     </div>
 	<section id="top-img">
-		<div id="top-scroll-img" class="slider">
-			<div class="wrapper"></div>
+		<div id="top-scroll-img" class="slider wrapper">
 			<div class="invited-area">
 				<div class="d-flex flex-column justify-content-center" style="height: 100%;color:white">
 	                <div class="p-2 align-self-center" id="invited_text">
@@ -150,7 +163,7 @@
 		</nav>
 	</header>
 	<!--for portrait-->
-	<i id="portrait-menu" class="fas fa-bars fa-2x"></i>
+	<i id="portrait-menu" class="fas fa-bars fa-2x" style="display: none"></i>
 	<!--婚紗照-->
 	<div class="container-fluid menu-1" style="width:100%;background-color: #eee">
 		<div class="d-flex flex-column" style="padding:2rem">
@@ -182,25 +195,22 @@
 	</div>-->
 	<!--婚宴資訊-->
 	<div class="container-fluid menu-3" style="width:100%;padding:1rem .5rem;background-color: #eee">
-		<div class="row">
 			<!--婚宴資訊-->
-			<div class="col-xl-6">
+			<div class="d-flex justify-content-center" style="padding:0">
 				<div class="p-2 align-self-center" style="width: fit-content;margin:auto auto">
 					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/03/29</div>
-					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：福容飯店</div>
+					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：福容大飯店</div>
 					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: red;margin-right:10px" class="fas fa-map-marker-alt"></i>地址：花蓮縣花蓮市民生路51號</div>
 				</div>
 			</div>
 			<!--map-->
-			<div class="col-xl-6">
+			<div class="p-2 align-self-center-12" style="padding:0">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.0066325184766!2d121.63103531407737!3d23.995542885286067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3466208136dfe79f%3A0x119d5ff83ebff27e!2z56aP5a655aSn6aOv5bqXIOiKseiTrg!5e0!3m2!1szh-TW!2stw!4v1573097551864!5m2!1szh-TW!2stw" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 			</div>
-		</div>
 	</div>
 	<!--風景3-->
-	<div class="container-fluid" style="width:100%;height: 50vh;padding:0">
-		<div class="landscape landscape3" style="background-image: url('resources/img/view1.png') ">
-			<div class="d-flex flex-column justify-content-center" style="position: absolute;z-index: 1;width:100%;height:inherit;">
+	<div class="container-fluid" style="width:100%;padding:0">
+		<div class="d-flex flex-column justify-content-center" style="width:100%;background-image: url('resources/img/view1.png');background-size: cover;background-position: center;padding: 4rem 0">
 				<div class="p-2 align-self-center w2">Don't Miss It!</div>
 				<div class="p-2 align-self-center countdown-text">: : : : : : 讓我們一起來倒數這值得紀念的一刻 : : : : : :</div>
 				<div class="p-2 countdown-area">
@@ -219,33 +229,118 @@
 						<div class="p-2 countdown-day-circle last">SEC</div>
 					</div>
 				</div>
+				<div class="d-flex flex-column justify-content-center" style="margin-top:2rem">
+					<div class="p-2 rsvp">RSVP</div>
+					<div class="p-2 rsvp-info">我們懷著喜悅與感謝的心，期盼您的光臨。</div>
+					<div class="p-2 rsvp-info">為方便安排您的座位</div>
+					<div class="p-2 rsvp-info">請於1月30日前回覆出席資訊，謝謝！</div>
+				</div>
 			</div>
-		</div>
 	</div>
 	<!--出席回覆-->
 	<div id="google_form" class="container-fluid menu-4" style="width:100%;;background-color: #eee">
-		<!-- <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="this.onload=function(){window.location='index.html'}"></iframe> -->
-		<div class="d-flex flex-column justify-content-center">
-			<div class="p-2 rsvp" style="text-align: center">RSVP</div>
-			<div class="p-2 rsvp-info" style="text-align: center">我們懷著喜悅與感謝的心，期盼您的光臨。</div>
-			<div class="p-2 rsvp-info" style="text-align: center">為方便安排您的座位</div>
-			<div class="p-2 rsvp-info" style="text-align: center">請於1月30日前回覆出席資訊，謝謝！</div>
-		</div>
-	</div>
-	<!--風景4-->
-	<div class="container-fluid" style="width:100%;height: 100vh;padding:0">
-		<div class="landscape landscape4" style="background-image: url('resources/img/view1.png') "></div>
-	</div>
-	<!--留言祝福-->
-	<div class="container-fluid menu-5" style="width:100%;height: 100vh;background-color: #eee">
-	</div>
-	<!--風景5-->
-	<div class="container-fluid" style="width:100%;height: 100vh;padding:0">
-		<div class="landscape landscape5" style="background-image: url('resources/img/view1.png') "></div>
-	</div>
-	<!--感恩有你-->
-	<div class="container-fluid menu-6" style="width:100%;height: 100vh;background-color: #eee">
-		
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="this.onload=function(){window.location='index.html?replied=1'}"></iframe>
+		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfj7fP6hDfjen1X9ByzEdfK71uZ_YeQuM9aj_Nd8VYk-_wRiw/formResponse" method="POST" id="ss-form" target="hidden_iframe" autocomplete="on"><ol role="list" class="ss-question-list" style="padding-left: 0;">
+			<!--姓名-->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+			    	<span class="input-group-text">姓名</span>
+			  	</div>
+			  	<input type="text" name="entry.1263821132" value="" class="form-control" id="entry_1263821132" dir="auto" aria-label="您的姓名 請留下真實中文姓名，不要留小名喔！謝謝 " aria-required="true" required="" title="" placeholder="請留下真實中文姓名，不要留小名喔！">
+			</div>
+
+			<!--與新人的關係-->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+			    	<label class="input-group-text" for="entry_2106041201">與新人的關係</label>
+			  	</div>
+			  	<select class="custom-select" name="entry.2106041201" id="entry_2106041201" aria-label="與新人的關係  " aria-required="true" required="">
+					<option value="&#26032;&#37070;&#35242;&#25114;">新郎親戚</option>
+					<option value="&#26032;&#37070;&#21516;&#23416;">新郎同學</option>
+					<option value="&#26032;&#37070;&#21516;&#20107;">新郎同事</option>
+					<option value="&#26032;&#23064;&#35242;&#25114;">新娘親戚</option>
+					<option value="&#26032;&#23064;&#21516;&#23416;">新娘同學</option>
+					<option value="&#26032;&#23064;&#21516;&#20107;">新娘同事</option>
+					<option value="&#30007;&#26041;&#23478;&#38263;&#21516;&#20107;&amp;&#26379;&#21451;">男方家長同事&amp;朋友</option>
+					<option value="&#22899;&#26041;&#23478;&#38263;&#21516;&#20107;&amp;&#26379;&#21451;">女方家長同事&amp;朋友</option>
+					<option value="&#20854;&#20182;">其他</option>
+				</select>
+			</div>
+
+			<!--是否出席？-->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+			    	<label class="input-group-text" for="entry_1791665139">您是否會出席婚禮？</label>
+			  	</div>
+			  	<select class="custom-select" name="entry.1791665139" id="entry_1791665139" aria-label="您是否會出席婚禮？  " aria-required="true" required="">
+					<option value="&#26159;&#65292;&#25105;&#38656;&#35201;&#23492;&#36865;&#32025;&#26412;&#21916;&#24086;">是，我需要寄送紙本喜帖</option>
+					<option value="&#26159;&#65292;&#35531;&#32102;&#25105;&#38651;&#23376;&#21916;&#24086;&#23601;&#22909;">是，請給我電子喜帖就好</option>
+					<option value="&#21542;&#65292;&#31069;&#20320;&#20497;&#24184;&#31119;&#32654;&#28415;&#65281;">否，祝你們幸福美滿！</option>
+				</select>
+			</div>
+
+			<!--當天參加人數(含本人)-->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+			    	<span class="input-group-text">當天參加人數(含本人)</span>
+			  	</div>
+			  	<input type="text" name="entry.1711431407" value="" class="form-control" id="entry_1711431407" dir="auto" aria-label="當天參加人數(含本人) 如有攜伴請告知喔！避免親友沒有位置享用美食及觀禮 " aria-required="true" required="" title="">
+			</div>
+			如有攜伴請告知喔！避免親友沒有位置享用美食及觀禮
+
+			<!--共幾位吃素-->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+			    	<span class="input-group-text">共幾位吃素</span>
+			  	</div>
+			  	<input type="text" name="entry.1295603944" value="" class="form-control" id="entry_1295603944" dir="auto" aria-label="共幾位吃素  " aria-required="true" required="" title="">
+			</div>
+
+			<!--是否需要兒童座椅 -->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+			    	<label class="input-group-text" for="entry_356945165">是否需要兒童座椅</label>
+			  	</div>
+			  	<select class="custom-select" name="entry.356945165" id="entry_356945165" aria-label="是否需要兒童座椅 有需要的父母親請記得填寫喔！ " aria-required="true" required="">
+					<option value="&#19981;&#38656;&#35201;">不需要</option>
+					<option value="&#38656;&#35201;">需要</option>
+				</select>
+			</div>
+
+			<!-- optional 兒童座椅數量-->
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+			    	<span class="input-group-text">兒童座椅數量</span>
+			  	</div>
+			  	<input type="text" name="entry.339850552" value="" class="form-control" id="entry_339850552" dir="auto" aria-label="兒童座椅數量  " title="">
+			</div>
+
+			<!--聯絡電話-->
+			聯絡電話
+			<div class="input-group mb-3">
+			  <input type="text" name="entry.878964154" class="form-control" value="" id="entry_878964154" dir="auto" aria-label="聯絡電話 請務必填寫，若有問題方便我們聯絡的到您喔~ " aria-required="true" required="" title="" placeholder="聯絡電話...">
+			</div>
+			
+			<!-- 喜帖寄送地址 -->
+			喜帖寄送地址
+			<div class="input-group mb-3">
+			  <input type="text" name="entry.861079328" value=""  class="form-control" id="entry_861079328" dir="auto" aria-label="喜帖寄送地址 請填寫詳細地址及郵遞區號，確保喜帖可以到您的手中喔 " aria-required="true" required="" title="" placeholder="喜帖寄送地址...">
+			</div>
+
+			<!-- Email -->
+			有需要電子喜帖的朋友，請務必填寫
+			<div class="input-group mb-3">
+			  <input type="text" name="entry.425653736" value="" class="form-control" id="entry_425653736" dir="auto" aria-label="EMAIL 有需要電子喜帖的朋友，請務必填寫 " title="" placeholder="email...">
+			</div>
+
+			<!-- 有什麼祝福的話想要對我們說的嗎 -->
+			有什麼祝福的話想要對我們說的嗎
+			<div class="input-group mb-3">
+			  <input type="text" name="entry.2127024887" value="" class="form-control" id="entry_2127024887" dir="auto" aria-label="有什麼祝福的話想要對我們說的嗎  " title="">
+
+			</div>
+			<input type="submit" name="submit" value="&#25552;&#20132;" id="ss-submit" class="btn btn-success">
+		</form>
 	</div>
 
 	<!--footer-->
