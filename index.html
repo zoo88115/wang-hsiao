@@ -109,7 +109,7 @@
 		function loadWeddingPhotosFixed(){
 			var str="";
 			for(var i=1;i<=6;i++){
-				str += '<div class="col-12" style="padding: 0 15px 15px 15px;"><img style="width:100%" src="resources/img/test/' + i +'.png"/></div>';
+				str += '<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding: 0 15px 15px 15px;"><img style="width:100%" src="resources/img/test/' + i +'.png"/></div>';
 			}
 			$("#lightgallery").html(str);
 		}
@@ -206,8 +206,8 @@
 		</div>
 	</div>
 	<!--風景1-->
-	<div class="container-fluid" style="width:100%;height: 50vh;padding:0">
-		<div class="landscape landscape1" style="background-image: url('resources/img/view1.png') ">
+	<div class="container-fluid landscape1" style="width:100%;height: 50vh;padding:0">
+		<div class="landscape" style="background-image: url('resources/img/view1.png') ">
 			<div class="d-flex flex-column justify-content-center" style="position: absolute;z-index: 1;width:100%;height:inherit;">
 				<div class="p-2 align-self-center w2">WHERE & WHEN</div>
 				<div class="p-2 align-self-center host-invite-text">誠摯邀請您來分享這幸福的時刻</div>
@@ -227,17 +227,24 @@
 	<!--婚宴資訊-->
 	<div class="container-fluid menu-3" style="width:100%;padding:1rem .5rem;background-color: #eee">
 			<!--婚宴資訊-->
-			<div class="d-flex justify-content-center" style="padding:0">
-				<div class="p-2 align-self-center" style="width: fit-content;margin:auto auto">
-					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/03/29</div>
-					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：福容大飯店</div>
-					<div style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: red;margin-right:10px" class="fas fa-map-marker-alt"></i>地址：花蓮縣花蓮市民生路51號</div>
+			<div class="row">
+				<div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
+					<div class="d-flex justify-content-center" style="padding:0;height:100%">
+						<div class="p-2 align-self-center" style="width: fit-content;margin:auto auto">
+							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/03/29</div>
+							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：福容大飯店</div>
+							<div class="date-info last" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: red;margin-right:10px" class="fas fa-map-marker-alt"></i>地址：花蓮縣花蓮市民生路51號</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
+					<div class="p-2 align-self-center-12" style="padding:0">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.0066325184766!2d121.63103531407737!3d23.995542885286067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3466208136dfe79f%3A0x119d5ff83ebff27e!2z56aP5a655aSn6aOv5bqXIOiKseiTrg!5e0!3m2!1szh-TW!2stw!4v1573097551864!5m2!1szh-TW!2stw" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+					</div>
 				</div>
 			</div>
 			<!--map-->
-			<div class="p-2 align-self-center-12" style="padding:0">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.0066325184766!2d121.63103531407737!3d23.995542885286067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3466208136dfe79f%3A0x119d5ff83ebff27e!2z56aP5a655aSn6aOv5bqXIOiKseiTrg!5e0!3m2!1szh-TW!2stw!4v1573097551864!5m2!1szh-TW!2stw" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-			</div>
+			
 	</div>
 	<!--風景3-->
 	<div class="container-fluid" style="width:100%;padding:0">
