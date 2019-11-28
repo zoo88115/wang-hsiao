@@ -99,7 +99,8 @@
 			    	$('#thank_you').show();
 			    	$('#rsvp_area').addClass('hide-important');
 			    	$('html,body').animate({scrollTop:$('#rsvp_area').offset().top}, 500);
-			    	alert('感謝您抽空回覆');
+			    	alert('謝謝您的祝福~');
+			    	window.history.pushState('', 'wedding', url.split('?')[0]);
 			    }
 			}
 		}
@@ -142,15 +143,17 @@
 			var opt = $('#entry_1791665139').val();
 			if(opt == '是，我需要寄送紙本喜帖'){
 				$("#card_to_address").show();
+				$('#entry_861079328').val('');
 				$("#card_to_email").show();
 			}else if(opt == '是，請給我電子喜帖就好'){
-				$("#card_to_address").show();
+				$("#card_to_address").hide();
+				$('#entry_861079328').val(' ');
 				$("#card_to_email").show();
 			}else{
 				$("#card_to_address").hide();
 				$("#card_to_email").hide();
-				$("#entry_861079328").val('');
-				$("#entry_425653736").val('');
+				$("#entry_861079328").val(' ');
+				$("#entry_425653736").val(' ');
 			}
 		}
 	</script>
