@@ -31,7 +31,6 @@
 		.landscape{
 			width:inherit;
 			height:inherit;
-			background: no-repeat fixed;
 			background-size: cover;
 			background-position: center;
 		}

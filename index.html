@@ -28,6 +28,57 @@
     <style>
 		@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 		@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+		@keyframes ldio-l78vwtjns6 {
+		  0% {
+		    top: 109.97999999999999px;
+		    left: 109.97999999999999px;
+		    width: 0;
+		    height: 0;
+		    opacity: 1;
+		  }
+		  100% {
+		    top: 17.549999999999997px;
+		    left: 17.549999999999997px;
+		    width: 184.85999999999999px;
+		    height: 184.85999999999999px;
+		    opacity: 0;
+		  }
+		}
+
+		.ldio-l78vwtjns6 div {
+		  position: absolute;
+		  border-width: 7.02px;
+		  border-style: solid;
+		  opacity: 1;
+		  border-radius: 50%;
+		  animation: ldio-l78vwtjns6 1.01010101010101s cubic-bezier(0,0.2,0.8,1) infinite;
+		}
+
+		.ldio-l78vwtjns6 div:nth-child(1) {
+		  border-color: #e90c59
+		}
+
+		.ldio-l78vwtjns6 div:nth-child(2) {
+		  border-color: #46dff0;
+		  animation-delay: -0.505050505050505s;
+		}
+
+		.loadingio-spinner-ripple-dwq4jnyl7fk {
+		  width: 234px;
+		  height: 234px;
+		  display: inline-block;
+		  overflow: hidden;
+		  background: #ffffff;
+		}
+		.ldio-l78vwtjns6 {
+		  width: 100%;
+		  height: 100%;
+		  position: relative;
+		  transform: translateZ(0) scale(1);
+		  backface-visibility: hidden;
+		  transform-origin: 0 0; /* see note above */
+		}
+		.ldio-l78vwtjns6 div { box-sizing: content-box; }
 	</style>
 	<script type="text/javascript">
 		//倒數計時
@@ -159,10 +210,19 @@
 	</script>
 </head>
 <body>
-	<div id="loader" style="position: fixed;width: 100%;height: 100vh;z-index: 999999;background-color: white">
-		<!--Loading页面-->
+	<!--Loading页面-->
+	<div id="loader" style="position: fixed;width: 100%;height: 100vh;z-index: 999999;background-color: white;text-align: center">
+		
 		<div class="d-flex flex-column justify-content-center" style="width:100%;height:100%"> 
-			<div class="p-2 align-self-center">loading</div>
+			<div class="p-2 align-self-center">
+				<div class="loadingio-spinner-ripple-dwq4jnyl7fk">
+					<div class="ldio-l78vwtjns6">
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			loading...
 		</div>
     </div>
 	<section id="top-img">
@@ -234,7 +294,7 @@
 				<div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
 					<div class="d-flex justify-content-center" style="padding:0;height:100%">
 						<div class="p-2 align-self-center" style="width: fit-content;margin:auto auto">
-							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/03/29</div>
+							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/03/29（日） 12點</div>
 							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：福容大飯店</div>
 							<div class="date-info last" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: red;margin-right:10px" class="fas fa-map-marker-alt"></i>地址：花蓮縣花蓮市民生路51號</div>
 						</div>
