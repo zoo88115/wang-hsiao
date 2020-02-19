@@ -161,7 +161,7 @@
 		function loadWeddingPhotosFixed(){
 			var str="";
 			for(var i=1;i<=6;i++){
-				str += '<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding: 0 15px 15px 15px;"><img style="width:100%" src="resources/img/test/' + i +'.png"/></div>';
+				str += '<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding: 0 15px 15px 15px;"><img style="width:100%" src="resources/img/test/' + i +'.jpg"/></div>';
 			}
 			$("#lightgallery").html(str);
 		}
@@ -178,16 +178,16 @@
 			$('html,body').animate({scrollTop:$('.menu-' + index).offset().top}, 500);
 		}
 
-		//判斷是否需要兒童座椅
-		function haveChild(){
-			if($("#entry_356945165").val() == '需要'){
-				$("#child-amount").show();
-			}else{
-				$("#child-amount").hide();
-				$('#entry_339850552')[0].selectedIndex = 0;  //第二個選項選取
-				$('#entry_339850552').trigger('change');
-			}
-		}
+		// //判斷是否需要兒童座椅
+		// function haveChild(){
+		// 	if($("#entry_356945165").val() == '需要'){
+		// 		$("#child-amount").show();
+		// 	}else{
+		// 		$("#child-amount").hide();
+		// 		$('#entry_339850552')[0].selectedIndex = 0;  //第二個選項選取
+		// 		$('#entry_339850552').trigger('change');
+		// 	}
+		// }
 
 		//判斷是否出席
 		function isAttend(){
@@ -236,7 +236,7 @@
 	                    <div style="text-align: center;text-shadow: #333 3px 3px 3px;opacity: 0.95;font-size:2.5rem;margin:1rem auto;max-width:75%;">WE ARE GETTING MARRIED</div>
 	                </div>
 	                <div class="p-2 align-self-center" id="banner_date">
-	                    - MARCH / 29TH / 2020 -
+	                    - JUNE / 6TH / 2020 -
 	                </div>
 	            </div>
 	        </div>
@@ -261,8 +261,12 @@
 	<!--婚紗照-->
 	<div class="container-fluid menu-1" style="width:100%;background-color: #eee">
 		<div class="d-flex flex-column" style="padding:2rem">
-			<div style="text-align: center;font-size: 1.6rem">WEDDING<i class="far fa-heart" style="color:pink;margin:0 10px"></i>PHOTOS</div>
-			<div style="text-align: center">: : : : : 與您分享我們幸福的婚紗照 : : : : :</div>
+			<div style="text-align: center;font-size: 1.6rem;display: none">WEDDING<i class="far fa-heart" style="color:pink;margin:0 10px"></i>PHOTOS</div>
+			<div style="text-align: center">
+				We know little about love.Love is like a pear.</br>
+				A pear is sweet and has a distinct shape.</br>
+				Try to define the shape of a pear.
+			</div>
 		</div>
 		<div class="row" id="lightgallery">
 		  	
@@ -270,11 +274,10 @@
 	</div>
 	<!--風景1-->
 	<div class="container-fluid landscape1" style="width:100%;height: 50vh;padding:0">
-		<div class="landscape" style="background-image: url('resources/img/view1.png') ">
+		<div class="landscape" style="">
+			<img class="d-flex flex-column justify-content-center for-view-img" src="resources/img/view1.jpg" style="width:100%;background-size: cover;background-position: center;position: absolute;">
 			<div class="d-flex flex-column justify-content-center" style="position: absolute;z-index: 1;width:100%;height:inherit;">
-				<div class="p-2 align-self-center w2">WHERE & WHEN</div>
-				<div class="p-2 align-self-center host-invite-text">誠摯邀請您來分享這幸福的時刻</div>
-				<div class="p-2 align-self-center host-invite">王唯至 & 蕭妤竹 敬邀</div>
+				<div class="p-2 align-self-center w2">where and when</div>
 			</div>
 		</div>
 	</div>
@@ -294,15 +297,15 @@
 				<div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
 					<div class="d-flex justify-content-center" style="padding:0;height:100%">
 						<div class="p-2 align-self-center" style="width: fit-content;margin:auto auto">
-							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/03/29（日） 12點</div>
-							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：福容大飯店</div>
-							<div class="date-info last" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: red;margin-right:10px" class="fas fa-map-marker-alt"></i>地址：花蓮縣花蓮市民生路51號</div>
+							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #FFD306;margin-right:10px" class="far fa-calendar-minus"></i>日期：2020/06/06（六） 12:00</div>
+							<div class="date-info" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: #64A600;margin-right:10px" class="fas fas fa-h-square"></i>地點：彭園婚宴會館新板館</div>
+							<div class="date-info last" style="margin-bottom:.5rem;width:fit-content"><i style="margin-right:0.5rem;padding:1rem;border-radius: 50%;color:white;background-color: red;margin-right:10px" class="fas fa-map-marker-alt"></i>地址：新北市板橋區中山路一段161號（新北市政府內）</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
 					<div class="p-2 align-self-center-12" style="padding:0">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.0066325184766!2d121.63103531407737!3d23.995542885286067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3466208136dfe79f%3A0x119d5ff83ebff27e!2z56aP5a655aSn6aOv5bqXIOiKseiTrg!5e0!3m2!1szh-TW!2stw!4v1573097551864!5m2!1szh-TW!2stw" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14462.573066351943!2d121.465541!3d25.0122349!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7a7f99a0015bfa6d!2z5b2t5ZyS5ama5a605pyD6aSoLeaWsOadv-mkqA!5e0!3m2!1szh-TW!2stw!4v1581830744079!5m2!1szh-TW!2stw" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 					</div>
 				</div>
 			</div>
@@ -311,44 +314,32 @@
 	</div>
 	<!--風景3-->
 	<div class="container-fluid" style="width:100%;padding:0">
-		<div class="d-flex flex-column justify-content-center" style="width:100%;background-image: url('resources/img/view1.png');background-size: cover;background-position: center;padding: 4rem 0">
-				<div class="p-2 align-self-center w2">Don't Miss It!</div>
-				<div class="p-2 align-self-center countdown-text">: : : : : : 讓我們一起來倒數這值得紀念的一刻 : : : : : :</div>
-				<div class="p-2 countdown-area">
-					<div class="d-flex justify-content-center">
-						<div class="countdown-circle d-flex flex-column justify-content-center"><div id="day">999</div></div>
-						<div class="countdown-circle d-flex flex-column justify-content-center"><div id="hour">24</div></div>
-						<div class="countdown-circle d-flex flex-column justify-content-center"><div id="min">60</div></div>
-						<div class="countdown-circle d-flex flex-column justify-content-center last"><div id="sec">60</div></div>
-					</div>
-				</div>
-				<div class="p-2 countdown-area-2">
-					<div class="d-flex justify-content-center">
-						<div class="p-2 countdown-day-circle">DAY</div>
-						<div class="p-2 countdown-day-circle">HOUR</div>
-						<div class="p-2 countdown-day-circle">MIN</div>
-						<div class="p-2 countdown-day-circle last">SEC</div>
-					</div>
-				</div>
+		<img class="d-flex flex-column justify-content-center for-view-img" src="resources/img/view2.jpg" style="width:100%;background-size: cover;background-position: center">
+	</div>
+	<div class="container-fluid" style="width:100%;padding:0;position: static;">
+		<img class="d-flex flex-column justify-content-center for-view-img" src="resources/img/view3.jpg" style="width:100%;background-size: cover;background-position: center">
+		<div class="d-flex flex-column justify-content-center" style="width:100%;padding: 4rem 0;position:absolute;top:0;left:0">
 				<div id="rsvp_area" class="d-flex flex-column justify-content-center" style="margin-top:2rem">
 					<div class="p-2 rsvp">RSVP</div>
-					
-					<div class="p-2 rsvp-info">誠摯的邀請您來參與及見證我們最重要的時刻</div>
-					<div class="p-2 rsvp-info">我們懷著喜悅與感謝的心，期盼您的光臨。</div>
-					<div class="p-2 rsvp-info">希望您們能協助完成下列表單</div>
-					<div class="p-2 rsvp-info">無論是否出席我們都能感受到您們的祝福！</div>
-					
 				</div>
 				<div id="thank_you" class="container-fluid" style="padding:2rem;text-align: center;display: none">
 					<div class="p-2 thank-you-eng">Thanks for your reply</div>
 					<div class="p-2 thank-you-tw">感謝你的回覆</div>
 				</div>
-			</div>
+		</div>
 	</div>
 	<!--出席回覆-->
 	<div id="google_form" class="container-fluid menu-4" style="width:100%;;background-color: #eee;padding:2rem 1rem">
+		<div class="d-flex flex-column justify-content-center" style="width:100%;padding:0 0 2rem 0">
+			<div id="rsvp_area2" class="d-flex flex-column justify-content-center" style="margin-top:2rem">
+				<div class="p-2 rsvp-info2">誠摯的邀請您來參與及見證我們最重要的時刻</div>
+				<div class="p-2 rsvp-info2">我們懷著喜悅與感謝的心，期盼您的光臨。</div>
+				<div class="p-2 rsvp-info2">希望您們能協助完成下列表單</div>
+				<div class="p-2 rsvp-info2">無論是否出席我們都能感受到您們的祝福！</div>
+			</div>
+		</div>
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="this.onload=function(){window.location='index.html?replied=1'}"></iframe>
-		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfj7fP6hDfjen1X9ByzEdfK71uZ_YeQuM9aj_Nd8VYk-_wRiw/formResponse" method="POST" id="ss-form" target="hidden_iframe" autocomplete="on"><ol role="list" class="ss-question-list" style="padding-left: 0;">
+		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScyHj88HV8B0VRUELQ9klBGCLCTOn0-qsp9wXL7vrghYqs0Wg/formResponse" method="POST" id="ss-form" target="hidden_iframe" autocomplete="on"><ol role="list" class="ss-question-list" style="padding-left: 0;">
 			<!--姓名-->
 			姓名
 			<div class="input-group mb-3">
@@ -374,10 +365,10 @@
 			<!--是否出席？-->
 			您是否會出席婚禮？
 			<div class="input-group mb-3">
-			  	<select class="custom-select" name="entry.1791665139" id="entry_1791665139" aria-label="您是否會出席婚禮？  " aria-required="true" required="" onchange="isAttend()">
-					<option value="&#26159;&#65292;&#25105;&#38656;&#35201;&#23492;&#36865;&#32025;&#26412;&#21916;&#24086;">是，我需要寄送紙本喜帖</option>
-					<option value="&#26159;&#65292;&#35531;&#32102;&#25105;&#38651;&#23376;&#21916;&#24086;&#23601;&#22909;">是，請給我電子喜帖就好</option>
-					<option value="&#21542;&#65292;&#31069;&#20320;&#20497;&#24184;&#31119;&#32654;&#28415;&#65281;">否，祝你們幸福美滿！</option>
+			  	<select class="custom-select" name="entry.1791665139" id="entry_1791665139" aria-label="您是否會出席婚禮？  " aria-required="true" required="">
+					<option value="&#20986;&#24109;&#65292;&#32085;&#23565;&#21040;&#22580;">出席，絕對到場</option>
+					<option value="&#21083;&#22909;&#26377;&#20107;&#65292;&#20294;&#35531;&#23492;&#21916;&#24086;&#32102;&#25105;">剛好有事，但請寄喜帖給我</option>
+					<option value="&#28961;&#27861;&#20986;&#24109;&#65292;&#31069;&#20320;&#20497;&#24184;&#31119;&#32654;&#28415;">無法出席，祝你們幸福美滿</option>
 				</select>
 			</div>
 
@@ -408,15 +399,6 @@
 				</select>
 			</div>
 
-			<!--是否需要兒童座椅 -->
-			是否需要兒童座椅
-			<div class="input-group mb-3">	
-			  	<select class="custom-select" name="entry.356945165" id="entry_356945165" aria-label="是否需要兒童座椅 有需要的父母親請記得填寫喔！ " aria-required="true" required="" onchange="haveChild()">
-					<option value="&#19981;&#38656;&#35201;">不需要</option>
-					<option value="&#38656;&#35201;">需要</option>
-				</select>
-			</div>
-
 			<!-- optional 兒童座椅數量-->
 			<div id="child-amount" style="display: none">
 			兒童座椅數量
@@ -440,14 +422,6 @@
 				喜帖寄送地址
 				<div class="input-group mb-3">
 				  <input type="text" name="entry.861079328" value=""  class="form-control" id="entry_861079328" dir="auto" aria-label="喜帖寄送地址 請填寫詳細地址及郵遞區號，確保喜帖可以到您的手中喔 " aria-required="true" required="" title="" placeholder="喜帖寄送地址...">
-				</div>
-			</div>
-
-			<!-- Email -->
-			<div id="card_to_email">
-				有需要電子喜帖的朋友，請務必填寫
-				<div class="input-group mb-3">
-				  <input type="text" name="entry.425653736" value="" class="form-control" id="entry_425653736" dir="auto" aria-label="EMAIL 有需要電子喜帖的朋友，請務必填寫 " title="" placeholder="email...">
 				</div>
 			</div>
 

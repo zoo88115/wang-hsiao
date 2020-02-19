@@ -24,7 +24,7 @@
 		.wrapper{
 			width: 100%;
 			height: 100vh;
-			background-image: url(../img/wrapper.png);
+			background-image: url(../img/wrapper.jpg);
 			background-size: cover;
    			background-position: center;
 		}
@@ -211,6 +211,12 @@
 		text-align: center;
 		text-shadow: #000 1px 1px 2px;
 	}
+	.rsvp-info2{
+		font-size:1.2rem;
+		color:white;
+		text-align: center;
+		text-shadow: #000 1px 1px 2px;
+	}
 
 	.thank-you-eng{
 		font-family: 'Pacifico', cursive;
@@ -231,12 +237,17 @@
 	}
 
 	#google_form{
-		padding:2rem 20% !important;
+		padding:0 20% 2rem 20% !important;
 	}
 	.date-info{
 		margin-bottom:1.5rem !important;
 	}
 	.date-info.last{
 		margin-bottom:0 !important;
+	}
+	.for-view-img{
+		object-fit: cover !important;
+		height:100vh !important;
+		width:100% !important;
 	}
 }
